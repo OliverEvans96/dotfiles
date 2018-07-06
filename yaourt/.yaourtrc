@@ -1,0 +1,4 @@
+# From http://kissmyarch.blogspot.com/2012/05/two-simple-yaourt-tips.html
+BUILD_NOCONFIRM=1
+EDITFILES=0
+TMPDIR=$HOME/tmp
