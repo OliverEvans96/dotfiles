@@ -1,0 +1,11 @@
+DIR 	01;36	# directory
+.f		31 		# fortran 77
+.f90	01;31	# fortran 90
+.py		32		# python
+.c		33		# c
+.cpp	01;33	# c++
+.sh		34		# bash
+
+.txt	01;35	# text
+.pdf	35		# pdf
+

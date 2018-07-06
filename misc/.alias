@@ -1,0 +1,65 @@
+# SSH - Grad lab
+alias sshg='ssh -X oliver@130.101.96.124'
+# Wake on lan - Grad lab
+alias wolg='wol -i 130.101.96.124 00:1A:A0:A7:A4:C5'
+# Fancy git log
+alias gl="git log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an - %ae>%Creset' --abbrev-commit"
+# Better git blame
+alias gb='git log -p -M --follow --stat --'
+# Start Jupyter Lab on bethel && tunnel over SSH
+alias jb="ssh -L 8888:localhost:8888 oge1@bethel.uakron.edu 'cd /home/oge1/lammps/sapphire/analysis/python && jupyter-lab --no-browser'"
+# Truly clear screen (doesn't work in TMUX)
+alias cls="echo -e \\033c"
+# Grep files
+alias gf='function _gf(){ find . | egrep -v '\.map$' | xargs grep -sE "$1"; };_gf'
+alias em='emacsclient -n'
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+
+# Latex make
+alias lm='latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode"'
+
+# GTD TaskWarrior
+alias in='task add +in'
+tickle () {
+    deadline=$1
+    shift
+    in +tickle wait:$deadline $@
+}
+alias tick=tickle
+
+alias rnd='task add +rnd +next +@computer +@online'
+webpage_title (){
+    wget -qO- "$*" | hxselect -s '\n' -c  'title' 2>/dev/null
+}
+
+read_and_review (){
+    link="$1"
+    title=$(webpage_title $link)
+    echo $title
+    descr="\"Read and review: $title\""
+    id=$(task add +next +rnr "$descr" | sed -n 's/Created task \(.*\)./\1/p')
+    task "$id" annotate "$link"
+}
+
+alias rnr=read_and_review
+
+# Gridcoin
+alias grd=gridcoinresearchd
+alias thes=aiksaurus
+
+# ZBackup
+alias zb-home='tar cvv $HOME | zbackup --non-encrypted backup /backup/oliver-arch-home/backups/backup-`date "+%Y-%m-%d"`'
+
+alias ll='ls -lrth'
+
+# Kubernetes namespace on nautilus
+namespace() {
+    kubectl config set-context nautilus --namespace=$1
+}
+# Get all resources
+alias getall='kubectl get ingress,replicaset,job,replicationcontroller,rolebinding,configmap,networkpolicy,secret,service,cronjob,serviceaccount,daemonset,persistentvolumeclaim,statefulset,deployment,pod,endpoints,poddisruptionbudget'
+
+# Search current directory for TODO.
+alias todo='grep -5rn TODO'
+
