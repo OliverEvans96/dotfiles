@@ -1,0 +1,97 @@
+# [Created by task 2.5.1 1/16/2018 21:01:17]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/.task
+
+# Color theme (uncomment one to use)
+#include /usr/share/doc/task/rc/light-16.theme
+#include /usr/share/doc/task/rc/light-256.theme
+#include /usr/share/doc/task/rc/dark-16.theme
+#include /usr/share/doc/task/rc/dark-256.theme
+#include /usr/share/doc/task/rc/dark-red-256.theme
+#include /usr/share/doc/task/rc/dark-green-256.theme
+#include /usr/share/doc/task/rc/dark-blue-256.theme
+#include /usr/share/doc/task/rc/dark-violets-256.theme
+#include /usr/share/doc/task/rc/dark-yellow-green.theme
+#include /usr/share/doc/task/rc/dark-gray-256.theme
+#include /usr/share/doc/task/rc/dark-gray-blue-256.theme
+#include /usr/share/doc/task/rc/solarized-dark-256.theme
+#include /usr/share/doc/task/rc/solarized-light-256.theme
+#include /usr/share/doc/task/rc/no-color.theme
+
+
+# GTD https://taskwarrior.org/news/news.20150627.html
+# Part 2 - Collection
+report.in.columns           = id,description
+report.in.description       = Inbox
+report.in.filter            = status:pending limit:page (+in)
+report.in.labels            = ID,Description
+
+# Priority
+uda.priority.default=M
+
+# Brain power
+uda.bp.type=string
+uda.bp.label=Brainpower
+uda.bp.values=H,M,L
+uda.bp.default=M
+
+# Estimated Time
+uda.estimate.type=numeric
+uda.estimate.label=Estimate
+
+# Next report
+report.next.description     = Most urgent tasks
+report.next.columns         = id,start.age,entry.age,urgency,depends,priority,project,tags,recur,scheduled.countdown,due.remaining,until.remaining,description,bp,estimate
+report.next.filter          = status:pending -in
+report.next.labels          = ID,Active,Age,Urgency,Deps,P,Project,Tag,Recur,S,Due,Until,Description,BP,Estimate
+report.next.sort            = urgency-,priority-,bp-
+
+# Contexts
+context.lbl=pro:kale 
+context.droplet=pro:droplet or pro:kelp or or pro:admin or pro:hpc 
+context.home=pro:crypto or pro:music or pro:wpr or pro:friends or pro:self or pro:chaos
+context.thesis=pro:kelp or pro:thesis
+
+# Urgency
+urgency.user.tag.next.coefficient=15.0 # +next tag
+urgency.due.coefficient=12.0 # overdue or near due date
+urgency.blocking.coefficient=8.0 # blocking other tasks
+urgency.uda.priority.H.coefficient=6.0 # high Priority
+urgency.uda.priority.M.coefficient=3.9 # medium Priority
+urgency.uda.priority.L.coefficient=1.8 # low Priority
+urgency.active.coefficient=4.0 # already started tasks
+urgency.scheduled.coefficient=4.0 # scheduled tasks
+urgency.age.coefficient=2.0 # coefficient for age
+urgency.annotations.coefficient=1.0 # has annotations
+urgency.tags.coefficient=1.0 # has tags
+urgency.project.coefficient=1.0 # assigned to any project
+urgency.blocked.coefficient=5.0 # blocked by other tasks
+urgency.waiting.coefficient=3.0 # waiting task
+#urgency.user.project.<project>.coefficient=5.0 # specific project
+#urgency.user.tag.<tag>.coefficient=5.0 # specific tag
+#urgency.uda.<name>.coefficient=5.0 # specific UDA
+
+# Project urgency
+urgency.user.project.droplet.coefficient=7.0
+urgency.user.project.kelp.coefficient=6.0
+urgency.user.project.kale.coefficient=5.0
+urgency.user.project.fear.coefficient=4.0
+urgency.user.project.wpr.coefficient=2.0
+urgency.user.project.admin.coefficient=2.0
+urgency.user.project.self.coefficient=2.0
+urgency.user.project.crypto.coefficient=2.0
+urgency.user.project.hpc.coefficient=1.0
+
+urgency.user.tag.thesis.coefficient=3.0 # specific tag
+context=thesis
