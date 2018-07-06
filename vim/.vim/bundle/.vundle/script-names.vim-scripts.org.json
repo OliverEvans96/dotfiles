@@ -1,0 +1,31 @@
+
+  <html><head><title>302 Redirection</title></head>
+  <body bgcolor=#ffffff>
+    <!--ServiceProvider=Wayport-->
+    <!--access procedure=WY.1-->
+    <!--access location=wp_391191.164222-->
+    <!--error=0-->
+    <!-- LoginURL=https://secure.wayport.net/roamer_login.adp -->
+    <!-- GIS 
+        <?xml version="1.0" encoding="UTF-8"?>
+        <WISPAccessGatewayParam 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation=
+                    "https://secure.wayport.net/WayportGISParam.xsd">
+            <Redirect>
+                <AccessProcedure>1.0</AccessProcedure>
+                <AccessLocation>wp_391191.164222</AccessLocation>
+                <LocationName>UC Berkeley Campus</LocationName>
+                <AuthenticationSeed>92A66CFBEDAB97AB756BB6D68CFD9AE4</AuthenticationSeed>
+                <LoginURL>https://secure.wayport.net/roamer_login.adp?MacAddr=24%3a0A%3a64%3aD2%3a1E%3a97&amp;IpAddr=10%2e12%2e18%2e240&amp;Ip6Addr=&amp;vsgpId=&amp;vsgId=869263&amp;UserAgent=&amp;ProxyHost=&amp;TunnelIfId=5118418&amp;VlanId=3104&amp;origDest=http%3a%2f%2fvim%2dscripts%2eorg%2fapi%2fscripts%2ejson</LoginURL>
+                <MessageType>100</MessageType>
+                <ResponseCode>0</ResponseCode>
+            </Redirect>
+        </WISPAccessGatewayParam>
+    End GIS -->
+    <h2>302 Found</h2>
+    <hr>
+    Click <a href="http://nmd.ucberk.sfo.wayport.net/index.adp?MacAddr=24%3a0A%3a64%3aD2%3a1E%3a97&IpAddr=10%2e12%2e18%2e240&Ip6Addr=&vsgpId=&vsgId=869263&UserAgent=&ProxyHost=&TunnelIfId=5118418&VlanId=3104&origDest=http%3a%2f%2fvim%2dscripts%2eorg%2fapi%2fscripts%2ejson">here</a> 
+    to get the document you requested.
+  </body></html>
+    
