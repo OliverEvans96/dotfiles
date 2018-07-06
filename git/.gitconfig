@@ -1,0 +1,19 @@
+[user]
+	name = Oliver Evans
+	email = oliverevans96@gmail.com
+[credential]
+	helper = cache
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	prompt = false
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge]
+	tool = nbdime
+[core]
+	editor = vim
+[pager]
+    diff = diff-highlight | less
+    log = diff-highlight | less
+    show = diff-highlight | less
