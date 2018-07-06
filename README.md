@@ -7,7 +7,7 @@ Configuration files for a happy operating system :)
 ```
 oliver@oliver-arch:~ % git clone git@github.com:OliverEvans96/dotfiles.git
 oliver@oliver-arch:~ % cd dotfiles
-oliver@oliver-arch:~/dotfiles % stow *
+oliver@oliver-arch:~/dotfiles % stow */
 ```
 
 Done! This creates symlinks to all the right places.
