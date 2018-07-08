@@ -94,4 +94,3 @@ urgency.user.project.crypto.coefficient=2.0
 urgency.user.project.hpc.coefficient=1.0
 
 urgency.user.tag.thesis.coefficient=3.0 # specific tag
-context=thesis

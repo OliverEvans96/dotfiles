@@ -13,7 +13,7 @@
 	tool = nbdime
 [core]
 	editor = vim
-[pager]
-    diff = diff-highlight | less
-    log = diff-highlight | less
-    show = diff-highlight | less
+# [pager]
+#     diff = diff-highlight | less
+#     log = diff-highlight | less
+#     show = diff-highlight | less
