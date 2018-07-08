@@ -61,26 +61,26 @@ filetype off                  " required
 execute pathogen#infect()
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'tpope/vim-fugitive'
-Plugin 'rosenfeld/conque-term'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'mihaifm/vimpanel'
+" Plugin 'scrooloose/nerdtree.git'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'rosenfeld/conque-term'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'mihaifm/vimpanel'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+" call vundle#end()            " required
 filetype plugin indent on    " required
 
 """ Window navigation
