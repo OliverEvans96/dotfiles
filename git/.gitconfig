@@ -13,6 +13,7 @@
 	tool = nbdime
 [core]
 	editor = vim
+	askPass = 
 # [pager]
 #     diff = diff-highlight | less
 #     log = diff-highlight | less
