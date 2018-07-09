@@ -106,7 +106,7 @@ export LANG=en_US.UTF-8
 source '/home/oliver/.alias'
 
 # Set ls colors
-#eval "$(dircolors /home/oliver/local/src/dircolors-solarized/dircolors.ansi-dark)"
+eval "$(dircolors $HOME/.dircolors.ansi-dark)"
 
 # Set keyboard layout
 # setxkbmap -layout dvorak
