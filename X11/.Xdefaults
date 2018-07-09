@@ -1,8 +1,8 @@
 # Tango Theme (https://en.wikipedia.org/wiki/Tango_Desktop_Project)
 # From http://bastian.rieck.ru/blog/posts/2013/making_urxvt_beautiful/
 
-urxvt*foreground: white
-urxvt*background: black
+urxvt*foreground: #B2B2B2
+urxvt*background: #292B2E
 
 *color0:  #2E3436
 *color1:  #a40000
