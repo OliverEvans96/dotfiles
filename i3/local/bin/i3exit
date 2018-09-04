@@ -1,4 +1,6 @@
 #!/bin/sh
+# Note: I'm using a modified, forking version of i3lock-fancy,
+# reproduced in this directory.
 lock() {
     i3lock-fancy
 }
