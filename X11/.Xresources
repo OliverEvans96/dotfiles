@@ -6,7 +6,9 @@ URxvt*scrollTtyKeypress: true
 URxvt*secondaryScreen: 1
 URxvt*secondaryScroll: 0
 URxvt*secondaryWheel: 1
-URxvt.font: xft:sourcecodepro:size=10
+#URxvt.font: xft:sourcecodepro:size=5
+URxvt*font:     xft:mono:medium:size=10
+xterm*faceName: xft:mono:medium:size=10
 URxvt.scrollBar: false
 
 URxvt.keysym.Shify-Control-V: perl:clipboard:paste
