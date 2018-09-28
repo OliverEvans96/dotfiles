@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/oliver/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 # Not a good idea!
-#export LD_LIBRARY_PATH="/home/oliver/local/lib:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH"
+#export LD_LIBRARY_PATH="$HOME/local/lib:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH"
 
 # For Kale development w/ vcluster
 export KALE_SRC="$HOME/lbl/kale"
@@ -62,8 +62,8 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/home/oliver/local/bin:/home/oliver/.gem/ruby/2.5.0/bin:/home/oliver/local/miniconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-#export PATH="/home/oliver/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/local/miniconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+#export PATH="$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -103,7 +103,7 @@ export LC_ALL=""
 export LC_COLLATE=C
 export LANG=en_US.UTF-8
 
-source '/home/oliver/.alias'
+source '$HOME/.alias'
 
 # Set ls colors
 eval "$(dircolors $HOME/.dircolors.ansi-dark)"
@@ -113,15 +113,15 @@ eval "$(dircolors $HOME/.dircolors.ansi-dark)"
 setxkbmap -layout us
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/oliver/local/src/google-cloud-sdk/path.zsh.inc' ]; then source '/home/oliver/local/src/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '$HOME/local/src/google-cloud-sdk/path.zsh.inc' ]; then source '$HOME/local/src/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/oliver/local/src/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/oliver/local/src/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '$HOME/local/src/google-cloud-sdk/completion.zsh.inc' ]; then source '$HOME/local/src/google-cloud-sdk/completion.zsh.inc'; fi
 
 # GTD TaskWarrior
 #export PS1='$(task +in +PENDING count) '$PS1
 export PS1='$(n=$(task +in +PENDING count); [[ $n > 0 ]] && echo "[in:$n] ")'$PS1
 
-#source /home/oliver/.terminal-colors
+#source $HOME/.terminal-colors
 
 export TOGGL_KEY=0a6774bee7dfc2f798fe56d4c92d3f48
