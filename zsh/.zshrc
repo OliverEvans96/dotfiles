@@ -110,7 +110,7 @@ eval "$(dircolors $HOME/.dircolors.ansi-dark)"
 
 # Set keyboard layout
 # setxkbmap -layout dvorak
-setxkbmap -layout us
+# setxkbmap -layout us
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/local/src/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/local/src/google-cloud-sdk/path.zsh.inc"; fi
