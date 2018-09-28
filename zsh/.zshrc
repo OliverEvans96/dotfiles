@@ -120,7 +120,7 @@ if [ -f "$HOME/local/src/google-cloud-sdk/completion.zsh.inc" ]; then source "$H
 
 # GTD TaskWarrior
 #export PS1='$(task +in +PENDING count) '$PS1
-export PS1='$(n=$(task +in +PENDING count); [[ $n > 0 ]] && echo "[in:$n] ")'$PS1
+#export PS1='$(n=$(task +in +PENDING count); [[ $n > 0 ]] && echo "[in:$n] ")'$PS1
 
 #source $HOME/.terminal-colors
 
