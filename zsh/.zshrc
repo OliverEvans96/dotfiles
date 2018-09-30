@@ -125,3 +125,5 @@ if [ -f "$HOME/local/src/google-cloud-sdk/completion.zsh.inc" ]; then source "$H
 #source $HOME/.terminal-colors
 
 export TOGGL_KEY=0a6774bee7dfc2f798fe56d4c92d3f48
+
+fpath=(~/.zsh/completions $fpath)
