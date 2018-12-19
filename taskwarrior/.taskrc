@@ -60,8 +60,9 @@ report.next.sort            = urgency-,priority-,bp-
 # Contexts
 context.lbl=pro:kale 
 context.droplet=pro:droplet or pro:kelp or or pro:admin or pro:hpc 
-context.home=pro:crypto or pro:music or pro:wpr or pro:friends or pro:self or pro:chaos
+context.home=pro:crypto or pro:music or pro:wpr or pro:friends or pro:self or pro:chaos or pro:scc
 context.thesis=pro:kelp or pro:thesis
+context.scc=pro:scc
 
 # Urgency
 urgency.user.tag.next.coefficient=15.0 # +next tag
@@ -94,3 +95,4 @@ urgency.user.project.crypto.coefficient=2.0
 urgency.user.project.hpc.coefficient=1.0
 
 urgency.user.tag.thesis.coefficient=3.0 # specific tag
+context=thesis

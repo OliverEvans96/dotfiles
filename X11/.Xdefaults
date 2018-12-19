@@ -4,6 +4,8 @@
 urxvt*foreground: #B2B2B2
 urxvt*background: #292B2E
 
+URxvt.letterSpace: -1
+
 *color0:  #2E3436
 *color1:  #a40000
 *color2:  #4E9A06
