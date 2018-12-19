@@ -46,7 +46,7 @@ bindsym $mod+o mode "$mode_launcher"
 mode "$mode_launcher" {
     bindsym e exec emacsclient --create-frame, mode "default"
     bindsym f exec firefox, mode "default"
-    bindsym j exec 'urxvtc -e julia', mode "default"
+    bindsym j exec urxvtc -e julia, mode "default"
     bindsym k exec keepass, mode "default"
     bindsym p exec pidgin, mode "default"
     bindsym t exec thunderbird, mode "default"
@@ -61,12 +61,12 @@ mode "$mode_launcher" {
 bindsym $mod+Shift+e mode "$mode_exit"
 set $mode_exit System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_exit" {
-    bindsym l exec --no-startup-id 'i3lock-fancy', mode "default"
-    bindsym e exec --no-startup-id 'i3-msg exit', mode "default"
-    bindsym s exec --no-startup-id 'i3lock-fancy & systemctl suspend', mode "default"
-    bindsym h exec --no-startup-id 'i3lock-fancy & systemctl hibernate', mode "default"
-    bindsym r exec --no-startup-id 'systemctl reboot', mode "default"
-    bindsym Shift+s exec --no-startup-id 'systemctl poweroff', mode "default"
+    bindsym l exec --no-startup-id i3lock-fancy, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id i3lock-fancy & systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id i3lock-fancy & systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id shutdown -P now, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
