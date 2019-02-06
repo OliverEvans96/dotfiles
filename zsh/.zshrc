@@ -62,7 +62,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="$HOME/local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/local/miniconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/local/bin:$HOME/.gem/ruby/2.6.0/bin:$HOME/local/miniconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 #export PATH="$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
