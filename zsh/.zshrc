@@ -105,6 +105,8 @@ export LANG=en_US.UTF-8
 
 source "$HOME/.alias"
 
+source ~/.profile
+
 # Set ls colors
 eval "$(dircolors $HOME/.dircolors.ansi-dark)"
 
