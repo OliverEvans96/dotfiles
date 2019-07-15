@@ -16,11 +16,14 @@ exec --no-startup-id /
 # Startup applications
 exec --no-startup-id emacs --daemon
 
+# Pinyin input
+exec --no-startup-id fcitx -d
+
 # Additional monitors
 #exec --no-startup-id xrandr --output VGA1 --auto --left-of LVDS1
 #exec --no-startup-id xrandr --output VGA1 --auto --right-of LVDS1 --rotate left
-exec --no-startup-id xrandr --output VGA1 --mode 1600x900 --left-of LVDS1 --verbose --rotate normal
-exec --no-startup-id xrandr --output HDMI1 --mode 3440x1440 --right-of LVDS1
+exec --no-startup-id xrandr --output VGA1 --mode 1600x900 --left-of eDP1 --verbose --rotate normal
+exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --above eDP1
 
 # Set background image
 exec --no-startup-id feh --bg-fill /home/oliver/Pictures/space-bg.png
