@@ -3,7 +3,7 @@ alias sshg='ssh -X oliver@130.101.96.124'
 # Wake on lan - Grad lab
 alias wolg='wol -i 130.101.96.124 00:1A:A0:A7:A4:C5'
 # Fancy git log
-alias gl="git log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an - %ae>%Creset' --abbrev-commit"
+alias gl="git log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an - %ae>%Creset' --abbrev=8"
 # Better git blame
 alias gb='git log -p -M --follow --stat --'
 # Start Jupyter Lab on bethel && tunnel over SSH
@@ -63,3 +63,6 @@ alias getall='kubectl get ingress,replicaset,job,replicationcontroller,rolebindi
 # Search current directory for TODO.
 alias todo='grep -5rn TODO'
 
+alias recent='find $1 -type f -print0 | xargs -0 stat --format "%Y :%y %n" | sort -nr | cut -d: -f2- | head'
+alias pc=pachctl
+alias kc=kubectl
