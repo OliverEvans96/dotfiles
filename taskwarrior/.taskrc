@@ -58,11 +58,8 @@ report.next.labels          = ID,Active,Age,Urgency,Deps,P,Project,Tag,Recur,S,D
 report.next.sort            = urgency-,priority-,bp-
 
 # Contexts
-context.lbl=pro:kale 
-context.droplet=pro:droplet or pro:kelp or or pro:admin or pro:hpc 
 context.home=pro:crypto or pro:music or pro:wpr or pro:friends or pro:self or pro:chaos or pro:scc
-context.thesis=pro:kelp or pro:thesis
-context.scc=pro:scc
+context.work=pro:nautilus
 
 # Urgency
 urgency.user.tag.next.coefficient=15.0 # +next tag
