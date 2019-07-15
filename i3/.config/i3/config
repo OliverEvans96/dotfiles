@@ -43,7 +43,7 @@ mode "$mode_off" {
 }
 
 # LAUNCH MODE #
-set $mode_launcher Launch: [e]macs [f]irefox [j]ulia [k]eepass [p]idgin [t]hunderbird [z]otero
+set $mode_launcher Launch: [e]macs [f]irefox [j]ulia [k]eepass [m]ullvad [p]idgin [t]hunderbird [z]otero
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
@@ -51,6 +51,7 @@ mode "$mode_launcher" {
     bindsym f exec firefox, mode "default"
     bindsym j exec mate-terminal -- julia, mode "default"
     bindsym k exec keepass, mode "default"
+    bindsym m exec mullvad-vpn, mode "default"
     bindsym p exec pidgin, mode "default"
     bindsym t exec thunderbird, mode "default"
     bindsym z exec zotero, mode "default"
