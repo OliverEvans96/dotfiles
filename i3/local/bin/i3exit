@@ -2,7 +2,7 @@
 # Note: I'm using a modified, forking version of i3lock-fancy,
 # reproduced in this directory.
 lock() {
-    i3lock-fancy
+    i3lock-fancy-rapid 5 5
 }
 echo "i3exit: $1"
 
