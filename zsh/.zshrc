@@ -62,7 +62,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="$HOME/local/bin:$HOME/.gem/ruby/2.6.0/bin:$HOME/local/miniconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/local/miniconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 #export PATH="$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -129,3 +129,14 @@ if [ -f "$HOME/local/src/google-cloud-sdk/completion.zsh.inc" ]; then source "$H
 export TOGGL_KEY=0a6774bee7dfc2f798fe56d4c92d3f48
 
 fpath=(~/.zsh/completions $fpath)
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/local/bin"
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
