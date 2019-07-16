@@ -10,3 +10,4 @@ export XMODIFIERS="@im=fcitx"
 
 export PATH="$HOME/local/bin:$PATH:$HOME/.rvm/bin"
 source $HOME/.xsession
+export GPG_TTY=$(tty)
