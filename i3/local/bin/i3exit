@@ -14,13 +14,13 @@ case "$1" in
         i3-msg exit
         ;;
     suspend)
-        lock && systemctl suspend
+        lock && sudo systemctl suspend
         ;;
     reboot)
-        systemctl reboot
+        sudo systemctl reboot
         ;;
     shutdown)
-        systemctl poweroff
+        sudo systemctl poweroff
         ;;
     *)
         echo "Usage: $0 {lock|logout|suspend|reboot|shutdown}"

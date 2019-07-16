@@ -12,9 +12,11 @@
 # Source custom i3 workspace commands
 exec --no-startup-id /
 
-
 # Startup applications
 exec --no-startup-id emacs --daemon
+
+# Lock screen & suspend on lid close
+exec --no-startup-id xss-lock -- i3exit suspend
 
 # Pinyin input
 exec --no-startup-id fcitx -d
@@ -43,17 +45,18 @@ mode "$mode_off" {
 }
 
 # LAUNCH MODE #
-set $mode_launcher Launch: [e]macs [f]irefox [j]ulia [k]eepass [m]ullvad [p]idgin [t]hunderbird [z]otero
+set $mode_launcher Launch: [e]macs [j]ulia [k]eepass [m]ullvad [p]idgin [t]hunderbird [v]ivaldi [z]otero
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
     bindsym e exec emacsclient --create-frame, mode "default"
-    bindsym f exec firefox, mode "default"
+    #bindsym f exec firefox, mode "default"
     bindsym j exec mate-terminal -- julia, mode "default"
     bindsym k exec keepass, mode "default"
     bindsym m exec mullvad-vpn, mode "default"
     bindsym p exec pidgin, mode "default"
     bindsym t exec thunderbird, mode "default"
+    bindsym v exec vivaldi-stable, mode "default"
     bindsym z exec zotero, mode "default"
     
     bindsym Escape mode "default"
@@ -62,13 +65,15 @@ mode "$mode_launcher" {
 
 # EXIT MODE #
 # https://faq.i3wm.org/question/239/how-do-i-suspendlockscreen-and-logout.1.html
+# NOPASSWD sudo systemctl {suspend,reboot,poweroff}
+# is required for these keyboard shortcuts.
 bindsym $mod+Shift+e mode "$mode_exit"
 set $mode_exit System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_exit" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
     # Not sure why this doesn't work
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym s exec --no-startup-id loginctl lock-session, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
