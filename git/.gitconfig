@@ -1,6 +1,7 @@
 [user]
 	name = Oliver Evans
 	email = oliverevans96@gmail.com
+	signingkey = 5189942492F0A63E
 [credential]
 	helper = cache
 [mergetool "nbdime"]
@@ -18,3 +19,7 @@
 #     diff = diff-highlight | less
 #     log = diff-highlight | less
 #     show = diff-highlight | less
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
