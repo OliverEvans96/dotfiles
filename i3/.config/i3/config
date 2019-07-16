@@ -45,15 +45,17 @@ mode "$mode_off" {
 }
 
 # LAUNCH MODE #
-set $mode_launcher Launch: [e]macs [j]ulia [k]eepass [m]ullvad [s]lack [v]ivaldi [z]otero
+set $mode_launcher Launch: [a]lsamixer [e]macs [j]ulia [k]eepass [m]ullvad [p]avucontrol [s]lack [v]ivaldi [z]otero
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
+    bindsym a exec mate-terminal -- alsamixer, mode "default"
     bindsym e exec emacsclient --create-frame, mode "default"
     #bindsym f exec firefox, mode "default"
     bindsym j exec mate-terminal -- julia, mode "default"
     bindsym k exec keepass, mode "default"
     bindsym m exec mullvad-vpn, mode "default"
+    bindsym p exec pavucontrol, mode "default"
     bindsym s exec slack, mode "default"
     bindsym v exec vivaldi-stable, mode "default"
     bindsym z exec zotero, mode "default"
