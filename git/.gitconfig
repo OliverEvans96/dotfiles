@@ -1,7 +1,7 @@
 [user]
 	name = Oliver Evans
 	email = oliverevans96@gmail.com
-	signingkey = 5189942492F0A63E
+	signingkey = A1BA3D39691538A2
 [credential]
 	helper = cache
 [mergetool "nbdime"]
@@ -15,11 +15,25 @@
 [core]
 	editor = vim
 	askPass = 
+	excludesFile = ~/.gitignore
 # [pager]
 #     diff = diff-highlight | less
 #     log = diff-highlight | less
 #     show = diff-highlight | less
 [commit]
-	gpgsign = true
+    gpgsign = true
 [gpg]
 	program = gpg2
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[color]
+	ui = auto
