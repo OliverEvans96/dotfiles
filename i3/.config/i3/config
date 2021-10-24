@@ -18,14 +18,14 @@ exec --no-startup-id emacs --daemon
 # Lock screen & suspend on lid close
 exec --no-startup-id xss-lock -- i3exit suspend
 
-# Pinyin input
-exec --no-startup-id fcitx -d
+# Compton for compositing
+exec compton -b
 
-# Additional monitors
-#exec --no-startup-id xrandr --output VGA1 --auto --left-of LVDS1
-#exec --no-startup-id xrandr --output VGA1 --auto --right-of LVDS1 --rotate left
-exec --no-startup-id xrandr --output VGA1 --mode 1600x900 --left-of eDP1 --verbose --rotate normal
-exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --above eDP1
+# Pinyin input
+# exec --no-startup-id fcitx -d
+
+# Redshift
+exec --no-startup-id redshift -l 41.0843671:-81.5129779 -m randr -t 6500:3400
 
 # Set background image
 exec --no-startup-id feh --bg-fill /home/oliver/Pictures/space-bg.png
@@ -44,21 +44,45 @@ mode "$mode_off" {
     bindsym $mod+Control+Shift+Escape mode "default"
 }
 
+# Set default workspace for applications
+assign [class="Vivaldi-stable"] 3
+assign [class="Ardour"] 5
+assign [class="Thunderbird"] 6
+assign [class="fweelin"] 7
+assign [class="Qsynth"] 7
+assign [class="Carla2"] 7
+assign [class="Zulip"] 7
+assign [class="calfjackhost"] 8
+assign [class="Hydrogen"] 9
+assign [class="Cadence"] 10
+assign [title="AlsaMixer"] 10
+assign [class="Catia"] 11
+assign [class="Claudia"] 11
+assign [class="qmidiroute"] 11
+assign [class="KeePass2"] 12
+assign [class="Zotero"] 13
+
 # LAUNCH MODE #
-set $mode_launcher Launch: [a]lsamixer [e]macs [j]ulia [k]eepass [m]ullvad [p]avucontrol [s]lack [v]ivaldi [z]otero
+set $mode_launcher Launch: [a]lsamixer [c]adence [C]laudia [e]macs [f]irefox [j]ulia [k]eepass [m]ullvad [n]teract [p]avucontrol [s]lack [t]hunderbird [v]ivaldi [z]otero [Z]ulip
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
-    bindsym a exec mate-terminal -- alsamixer, mode "default"
+    bindsym a exec gnome-terminal --title=AlsaMixer -- alsamixer, mode "default"
+    bindsym c exec cadence, mode "default"
+    bindsym c exec claudia, mode "default"
     bindsym e exec emacsclient --create-frame, mode "default"
     #bindsym f exec firefox, mode "default"
-    bindsym j exec mate-terminal -- julia, mode "default"
+    bindsym f exec firefox, mode "default"
+    bindsym j exec gnome-terminal -- julia, mode "default"
     bindsym k exec keepass, mode "default"
     bindsym m exec mullvad-vpn, mode "default"
+    bindsym n exec nteract, mode "default"
     bindsym p exec pavucontrol, mode "default"
     bindsym s exec slack, mode "default"
-    bindsym v exec vivaldi-stable, mode "default"
+    bindsym t exec thunderbird, mode "default"
+    bindsym v exec vivaldi, mode "default"
     bindsym z exec zotero, mode "default"
+    bindsym Shift+z exec zulip, mode "default"
     
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -83,30 +107,18 @@ mode "$mode_exit" {
     bindsym Escape mode "default"
 }
 
-# DISCONNECT MODE #
-bindsym $mod+Shift+d mode "$mode_disconnect"
-set $mode_disconnect Disconnect monitor: [H]DMI1 [V]GA1
-mode "$mode_disconnect" {
-	
-	bindsym h exec --no-startup-id xrandr --output HDMI1 --off, mode "default"
-	bindsym v exec --no-startup-id xrandr --output VGA1 --off, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-
 # CONNECT MODE #
 bindsym $mod+Shift+c mode "$mode_connect"
-set $mode_connect Connect monitor: [H]DMI1 [V]GA1 -- [M]irror Toggle (off)
+set $mode_connect Connect monitor: [D]P1 [H]DMI1 [V]GA1 HDMI-A-1-[1] HDMI-A-1-[2] -- [M]irror Toggle (off)
 mode "$mode_connect" {
-	
-	bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --rotate left --right-of LVDS1, mode "default"
-	#bindsym h exec --no-startup-id xrandr --output HDMI1 --mode 3440x1440 --right-of LVDS1, mode "default"
-	#bindsym v exec --no-startup-id xrandr --output VGA1 --auto --left-of LVDS1, mode "default"
-    bindsym v exec --no-startup-id xrandr --output VGA1 --mode 1600x900 --left-of LVDS1 --verbose --rotate normal, mode "default"
-	#bindsym v exec --no-startup-id xrandr --output VGA1 --mode 1600x900 --right-of LVDS1 --rotate left, mode "default"
+	bindsym 1 exec --no-startup-id xrandr --output HDMI-A-1-1 --auto --left-of eDP1, mode "default"
+	bindsym 2 exec --no-startup-id xrandr --output HDMI-A-1-2 --auto --right-of eDP1, mode "default"
+	bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --right-of eDP1, mode "default"
+	bindsym d exec --no-startup-id xrandr --output DP2 --mode 1600x900 --left-of eDP1, mode "default"
+	#bindsym h exec --no-startup-id xrandr --output HDMI1 --mode 3440x1440 --right-of eDP1, mode "default"
+	#bindsym v exec --no-startup-id xrandr --output VGA1 --auto --left-of eDP1, mode "default"
+    bindsym v exec --no-startup-id xrandr --output VGA1 --mode 1600x900 --left-of eDP1 --verbose --rotate normal, mode "default"
+	#bindsym v exec --no-startup-id xrandr --output VGA1 --mode 1600x900 --right-of eDP1 --rotate left, mode "default"
     bindsym m mode "$mode_mirror"
 
     # back to normal: Enter or Escape
@@ -115,12 +127,29 @@ mode "$mode_connect" {
 }
 
 # MIRROR MODE #
-set $mode_mirror Connect monitor: [H]DMI1 [V]GA1 -- [M]irror Toggle (on)
+set $mode_mirror Connect monitor: [D]P1 [H]DMI1 [V]GA1 -- [M]irror Toggle (on)
 mode "$mode_mirror" {
 	
-	bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --same-as LVDS1, mode "default"
-	bindsym v exec --no-startup-id xrandr --output VGA1 --auto --same-as LVDS1, mode "default"
+	bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --same-as eDP1, mode "default"
+	bindsym d exec --no-startup-id xrandr --output DP2 --auto --same-as eDP1, mode "default"
+	bindsym v exec --no-startup-id xrandr --output VGA1 --auto --same-as eDP1, mode "default"
     bindsym m mode "$mode_connect"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# DISCONNECT MODE #
+bindsym $mod+Shift+d mode "$mode_disconnect"
+set $mode_disconnect Disconnect monitor: [D]P1 [H]DMI1 [V]GA1 HDMI-A-1-[1] HDMI-A-1-[2] 
+mode "$mode_disconnect" {
+	
+	bindsym 1 exec --no-startup-id xrandr --output HDMI-A-1-1 --off, mode "default"
+	bindsym 2 exec --no-startup-id xrandr --output HDMI-A-1-2 --off, mode "default"
+	bindsym h exec --no-startup-id xrandr --output HDMI1 --off, mode "default"
+	bindsym d exec --no-startup-id xrandr --output DP2 --off, mode "default"
+	bindsym v exec --no-startup-id xrandr --output VGA1 --off, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -178,8 +207,8 @@ bindsym $mod+Control+Shift+Right move workspace to output right
 bindsym $mod+Control+Shift+Down move workspace to output down
 
 # Marks
-bindsym $mod+m exec i3-input -F 'mark %s' -P 'Mark name: '
-bindsym $mod+Shift+m exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
+#bindsym $mod+m exec i3-input -F 'mark %s' -P 'Mark name: '
+#bindsym $mod+Shift+m exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
 
 # Wifi
 #exec --no-startup-id nm-applet
@@ -203,11 +232,14 @@ font pango: Source Code Pro 10px
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Shift+Return exec mate-terminal
-#bindsym $mod+Return exec mate-terminal #i3-sensible-terminal
+bindsym $mod+Shift+Return exec gnome-terminal
+#bindsym $mod+Return exec gnome-terminal #i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# kill window by cursor
+bindsym $mod+Shift+x exec --no-startup-id xkill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -333,7 +365,7 @@ bindsym $mod+Shift+Control+9 move container to workspace 19
 bindsym $mod+Shift+Control+0 move container to workspace 20
 
 # Edit configuration file
-bindsym $mod+c exec mate-terminal -e "vim $HOME/.config/i3/config"
+bindsym $mod+c exec gnome-terminal -e "vim $HOME/.config/i3/config"
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
