@@ -64,5 +64,9 @@ alias getall='kubectl get ingress,replicaset,job,replicationcontroller,rolebindi
 alias todo='grep -5rn TODO'
 
 alias recent='find $1 -type f -print0 | xargs -0 stat --format "%Y :%y %n" | sort -nr | cut -d: -f2- | head'
-alias pc=pachctl
+# alias pc=pachctl
 alias kc=kubectl
+alias ic=istioctl
+alias xc='xclip -selection keyboard'
+alias rn=react-native
+alias dl=dolt
