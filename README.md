@@ -1,4 +1,4 @@
-#Oliver's Dotfiles
+# Oliver's Dotfiles
 
 Configuration files for a happy operating system :)
 
